@@ -3,6 +3,32 @@ import { ref, reactive } from 'vue'
 
 const titulo = ref('Meu Vuejs')
 const mostrarResultado = ref(false)
+const categoria = [
+{
+  id:1,
+  nome: 'Joia'
+},
+{
+  id:2,
+  nome: 'Eletrônico'
+},
+{
+  id:3,
+  nome: 'Móveis'
+},
+{
+  id:4,
+  nome: 'Comestico'
+},
+
+{
+  id:5,
+  nome: 'Decoração'
+}
+
+]
+
+
 
 const produto = reactive({
   nome: '',
@@ -14,6 +40,8 @@ const produto = reactive({
 function formatarpreco(preco) {
   return `R$ ${preco.toFixed(2).replace('.', ',')}`
 }
+
+
 </script>
 
 <template>
@@ -21,12 +49,28 @@ function formatarpreco(preco) {
   <div class="container">
     <div class="formulario">
       <h2>formulario</h2>
-      <input type="text" v-model="titulo.value">
       <hr>
+      
       <label for="Nome:"></label>
-      <input type="text" v-model="produto.nome">
+      <input type="text" v-model="produto.nome" required>
+      <div class="row">
       <label for="">Preco:</label>
       <input type="number" v-model="produto.preco">
+    </div>
+      <div class="row">
+        <label for="">Quantidade</label>
+        <input type="number" v-model="produto.quantidade">
+
+      </div>
+      <fieldset>
+      <legend>Categoria</legend>
+
+
+    <div class="row" v-for="categoria in categoria" :key="categoria.id">
+     <input type="checkbox" v-model="produto.categoria.id" :value="categoria.id" /> {{ categoria.nome }}
+    </div>
+
+  </fieldset>
       <div>
         <button @click="mostrarResultado = !mostrarResultado" class="enviar">enviar</button>
       </div>
@@ -61,6 +105,10 @@ function formatarpreco(preco) {
 }
 .formulario {
   background-color: azure;
+}
+.formulario.row{
+width: 80%;
+
 }
 .resultado {
   background-color: rgb(245, 231, 220);

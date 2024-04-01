@@ -8,14 +8,22 @@
 #app{
   padding: 5px;
 }
-input{
+input [type= 'text']{
   min-width: 400px;
   height: 20px;
 border-radius: 10px;
 padding: 10px;
 font-size: 16px;
 margin: 10px 0;
+
 }
+input [type= 'checbox']{
+width: 20px;
+height: 20px;
+margin: 0 20px;
+
+}
+
 
 input.hover{
   border: 1px solid black;
