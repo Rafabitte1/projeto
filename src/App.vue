@@ -42,7 +42,27 @@
           <option value="AL">Alagoas</option>
           <option value="AP">Amapá</option>
           <option value="AM">Amazonas</option>
-          <!-- Add other states here -->
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceara</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espirito Santo</option>
+          <option value="GO">Goias</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Gross</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernabuco</option>
+          <option value="PI">Piaui</option>
+          <option value="RJ">RIO de Jaineiro</option>
+          <option value="RN">Rio Garnde do Norte</option>
+          <option value="RS">Rio grande do Sul</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Snata Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Toncantins</option>
         </select>
       </div>
       <div class="form-group">
