@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div class="container">
     <h1>Editar Perfil</h1>
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm" class="form">
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" v-model="user.nome" required />
@@ -57,7 +57,7 @@
         <label for="biografia">Biografia:</label>
         <textarea id="biografia" v-model="user.biografia" required></textarea>
       </div>
-      <button type="submit">Salvar</button>
+      <button type="submit" class="button">Salvar</button>
     </form>
     <div v-if="showResult" class="result">
       <h2>Perfil Editado:</h2>
@@ -75,116 +75,84 @@
   </div>
 </template>
 
-<script >
-export default {
-  data() {
-    return {
-      user: {
-        nome: '',
-        email: '',
-        senha: '',
-        confirmarSenha: '',
-        dataNascimento: '',
-        endereco: '',
-        cidade: '',
-        estado: '',
-        hobbies: '',
-        linguagens: '',
-        biografia: '',
-      },
-      confirmarSenha: '',
-      showResult: false,
-    };
-  },
-  methods: {
-    submitForm() {
-      // Handle form submission here
-      this.showResult = true;
-    },
-  },
+<script setup>
+import { ref } from 'vue';
+
+const user = {
+  nome: ref(''),
+  email: ref(''),
+  senha: ref(''),
+  confirmarSenha: ref(''),
+  dataNascimento: ref(''),
+  endereco: ref(''),
+  cidade: ref(''),
+  estado: ref(''),
+  hobbies: ref(''),
+  linguagens: ref(''),
+  biografia: ref(''),
+};
+
+let confirmarSenha = ref('');
+let showResult = ref(false);
+
+const submitForm = () => {
+  showResult.value = true;
 };
 </script>
 
-<style sco>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+<style scoped>
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666; /* Cor do texto do label */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #9BBAE8; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transição suave na mudança de cor de fundo */
+}
+
+button:hover {
+  background-color: #7a93c9; /* Cor de fundo do botão ao passar o mouse */
 }
 
 .result {
-  margin-top: 2rem;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  background-color: #f5f5f5;
-}
-
-.template{
-  min-height: 100vh;
-  background-color: #81259d;
-  font-family: sans-serif;
-  display: grid;
-  place-items: center;
-}
-
-.p{
-  font-size: 1.3125rem;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 5rem;
-}
-
-.form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 28rem;
-  background: #fff;
-  padding: 4rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 1.8rem rgba(0, 0, 0, 0.15);
-}
-.label{
-  width: 100%;
-  color: #777;
-  align-self: flex-start;
-  transition: 0.15s linear;
-}
-label:focus-within{
-  color: #8d3dc8;
-}
-.inpunt{
-  font-size: 1.1875rem;
-  color: #404040;
-  padding: 1rem 0 0.5rem 0;
-  width: 100%;
-  border: none;
-  border-color: #a0a0a0;
-  border-bottom-width: 1px;
-  border-bottom-style: dotted;
-  margin-bottom: 3rem;
-  transition: 0.15s linear;
-}
-.button {
-font-size: 0.8125rem;
-line-height: 2rem;
-font-weight: 700;
-text-transform: uppercase;
-width: 100%;
-padding: 1rem 2rem;
-cursor: pointer;
-background: transparent;
-color: purple;
-border: 1px solid currentColor; 
-border-radius: 4px;
-margin-top: 0.5rem;
-
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
 }
 </style>
-
