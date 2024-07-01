@@ -142,7 +142,7 @@ h1 {
 label {
   display: block;
   margin-bottom: 5px;
-  color: #666; /* Cor do texto do label */
+  color: #666; 
 }
 
 input[type="text"],
@@ -157,16 +157,16 @@ select {
 
 button {
   padding: 10px 20px;
-  background-color: #9BBAE8; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto do botão */
+  background-color: #9BBAE8; 
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s; /* Transição suave na mudança de cor de fundo */
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #7a93c9; /* Cor de fundo do botão ao passar o mouse */
+  background-color: #7a93c9;
 }
 
 .result {
